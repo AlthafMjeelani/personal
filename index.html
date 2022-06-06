@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/image.jpg" rel="icon">
+  <link href="assets/img/image.jpeg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -47,7 +47,7 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="assets/img/image.jpeg" alt="" class="img-fluid rounded-circle">
+        <img src="assets/img/profile.jpeg" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="index.html">Althaf M</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="https://twitter.com/althaf_m786" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
@@ -398,7 +398,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="https://script.google.com/macros/s/AKfycbyLEaZuWJ7Z4CgCYXQlZka-lUtRyYcqyV3uekf5dwXZsoEtHUJO9Nn7ndNXmy9VzqWM/exec" method="post" class="gform" target="_blank">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -465,25 +465,6 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script>
-    $("#submit-form").submit((e)=>{
-        e.preventDefault()
-        $.ajax({
-            url:"https://script.google.com/macros/s/AKfycbz-KC9g4jzARPNTdgjVbqrjPJtEURSsSirTCNBzFytY8u9_QRo8mYhyTWT7d_NFCrPe/exec",
-            data:$("#submit-form").serialize(),
-            method:"POST",
-            success:function (response){
-                alert("Form submitted successfully")
-                window.location.reload()
-                //window.location.href="https://google.com"
-            },
-            error:function (err){
-                alert("Something Error")
-
-            }
-        })
-    })
-</script>
 
 </body>
 
