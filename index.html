@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Althaf m</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="#" name="description">
+  <meta content="#" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/image.jpg" rel="icon">
@@ -65,7 +65,8 @@
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
+              <span>Portfolio</span></a></li>
           <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
@@ -270,10 +271,10 @@
 
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
+          <div class="">
             <img src="assets/img/portfolio/swiggy.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>swiggy</h4>
+              <h4> <a href="https://github.com/althafm2002/swiggy.git" target="_blank">swiggy</a></h4>
               <p>This is a simple clone of the home page of swiggy. This made by using HTML & CSS</p>
             </div>
           </div>
@@ -282,15 +283,14 @@
 
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
+          <div class="">
             <img src="assets/img/portfolio/spotify.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Spotify</h4>
-              <p>This is a clone of spotify's official website which is created by using html and css</p>
+              <h4> <a href="https://github.com/althafm2002/SPOTIFY.git" target="_blank">spotify</a></h4>
+              <p>This is a simple clone of the home page of spotify. This made by using HTML & CSS</p>
             </div>
           </div>
         </div>
-
       </div>
 
       </div>
@@ -394,28 +394,28 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="https://script.google.com/macros/s/AKfycbyLEaZuWJ7Z4CgCYXQlZka-lUtRyYcqyV3uekf5dwXZsoEtHUJO9Nn7ndNXmy9VzqWM/exec" method="post" class="gform" target="_blank">
+            <form id="submit-form" action="" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name
-                  <input type="text" name="name" class="form-control" id="name" required>
-                </label>
+                    <input type="text" name="name" class="form-control" id="name" required>
+                  </label>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="name">Your Email
-                  <input type="email" class="form-control" name="email" id="email" required>
-                </label>
+                    <input type="email" class="form-control" name="email" id="email" required>
+                  </label>
                 </div>
               </div>
               <div class="form-group">
                 <label for="name">Subject
-                <input type="text" class="form-control" name="subject" id="subject" required>
-              </label>
+                  <input type="text" class="form-control" name="subject" id="subject" required>
+                </label>
               </div>
               <div class="form-group">
                 <label for="name">Message
-                <textarea class="form-control" name="message" rows="10" required></textarea>
-              </label>
+                  <textarea class="form-control" name="message" rows="10" required></textarea>
+                </label>
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
@@ -465,6 +465,25 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    $("#submit-form").submit((e) => {
+      e.preventDefault()
+      $.ajax({
+        url: "https://script.google.com/macros/s/AKfycbyLEaZuWJ7Z4CgCYXQlZka-lUtRyYcqyV3uekf5dwXZsoEtHUJO9Nn7ndNXmy9VzqWM/exec",
+        data: $("#submit-form").serialize(),
+        method: "post",
+        success: function (response) {
+          alert("Form submitted successfully")
+          window.location.reload()
+          //window.location.href="https://google.com"
+        },
+        error: function (err) {
+          alert("Something Error")
+
+        }
+      })
+    })
+  </script>
 
 </body>
 
